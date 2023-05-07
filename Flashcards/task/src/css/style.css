@@ -1,36 +1,56 @@
-body {
-    background-color: white;
+.quiz-area {
+    background: url("https://stepik.org/media/attachments/lesson/374893/world.png") no-repeat;
     background-size: cover;
-    background-image: url(https://cdn2.vectorstock.com/i/1000x1000/54/66/simple-world-map-sign-on-white-background-vector-36365466.jpg);
 }
 
-h1 {
-    color: black;
-    font-family: "Arial Rounded MT Bold";
-}
-
-main {
-    width: 35%;
-    margin: 0 auto;
-}
-
-.capitals {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
-    gap: 1em;
-}
-
-.box {
-    width: 7em;
-    height: 7em;
-
-    color: white;
-    background-color: rgb(29, 151, 182);
-}
-
-p {
+.title, .card-front, .card-back {
     text-align: center;
+    font-family: sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 30% 0 30%;
+    width: 510px;
+}
+
+.flex-item {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    flex-basis: 150px;
+    border-radius: 10px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.card-back {
+    background-color: white;
+    color: dodgerblue;
+    border: 1px dodgerblue solid;
+    transform: rotateY(180deg);
+}
+
+.flex-item:hover .card {
+    transform: rotateY(180deg);
 }
